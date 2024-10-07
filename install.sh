@@ -8,9 +8,6 @@ nala update
 nala upgrade -y
 sudo nala install gnupg2 apt-transport-https wget curl ufw neofetch expect -y
 bash -c 'echo -e "clear\nneofetch\nsystemctl list-units --type service | egrep '\''apache2|SQL|ssh'\''" > /etc/profile.d/mymotd.sh && chmod +x /etc/profile.d/mymotd.sh'
-sed -i 's/# info "Local IP" local_ip/info underline\n    info "Local IP" local_ip/' .config/neofetch/config.conf
-sed -i 's/# info "Public IP" public_ip/info "Public IP" public_ip/' .config/neofetch/config.conf
-alias neofetch="neofetch --title_fqdn on --memory_unit gib --memory_percent on --speed_shorthand on --cpu_temp C"
 wget -q -O- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor | sudo tee /usr/share/keyrings/microsoft.gpg > /dev/null 2>&1
 echo "deb [signed-by=/usr/share/keyrings/microsoft.gpg arch=amd64,armhf,arm64] https://packages.microsoft.com/ubuntu/22.04/mssql-server-2022 jammy main" | sudo tee /etc/apt/sources.list.d/mssql-server-2022.list
 clear
@@ -61,7 +58,10 @@ echo $PATH
 which sqlcmd
 which bcp
 sqlcmd -S localhost -U sa -P $sa_password -Q "CREATE DATABASE DRMONITORA"
-reset
+sed -i 's/# info "Local IP" local_ip/info underline\n    info "Local IP" local_ip/' .config/neofetch/config.conf
+sed -i 's/# info "Public IP" public_ip/info "Public IP" public_ip/' .config/neofetch/config.conf
+alias neofetch="neofetch --title_fqdn on --memory_unit gib --memory_percent on --speed_shorthand on --cpu_temp C"
+clear
 neofetch
 echo '
    Microsoft SQL Server 2022 instalado com sucesso.
