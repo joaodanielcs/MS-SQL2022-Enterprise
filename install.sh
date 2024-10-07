@@ -53,10 +53,13 @@ sudo nala update
 sudo ACCEPT_EULA=Y nala install mssql-tools unixodbc-dev -y
 ls -ah /opt/mssql-tools/bin
 echo 'export PATH="$PATH:/opt/mssql-tools/bin"' >> /etc/environment
+echo 'alias neofetch="neofetch --title_fqdn on --memory_unit gib --memory_percent on --speed_shorthand on --cpu_temp C"' >> /etc/environment
 source /etc/environment
 echo 'export PATH="$PATH:/opt/mssql-tools/bin"' >> ~/.profile
+echo 'alias neofetch="neofetch --title_fqdn on --memory_unit gib --memory_percent on --speed_shorthand on --cpu_temp C"' >> ~/.profile
 source ~/.profile
 echo 'export PATH="$PATH:/opt/mssql-tools/bin"' >> ~/.bashrc
+echo 'alias neofetch="neofetch --title_fqdn on --memory_unit gib --memory_percent on --speed_shorthand on --cpu_temp C"' >> ~/.bashrc
 source ~/.bashrc
 
 echo $PATH
