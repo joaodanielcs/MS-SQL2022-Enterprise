@@ -7,7 +7,7 @@ clear
 nala update
 nala upgrade -y
 sudo nala install gnupg2 apt-transport-https wget curl ufw neofetch expect -y
-bash -c 'echo -e "clear\nneofetch\nsystemctl list-units --type service | egrep '\''apache2|SQL|ssh'\''" > /etc/profile.d/mymotd.sh && chmod +x /etc/profile.d/mymotd.sh'
+bash -c 'echo -e "clear\nneofetch --title_fqdn on --memory_unit gib --memory_percent on --speed_shorthand on --cpu_temp C\nsystemctl list-units --type service | egrep '\''apache2|SQL|ssh'\''" > /etc/profile.d/mymotd.sh && chmod +x /etc/profile.d/mymotd.sh'
 neofetch
 clear
 sed -i 's/# info "Local IP" local_ip/info underline\n    info "Local IP" local_ip/' .config/neofetch/config.conf
