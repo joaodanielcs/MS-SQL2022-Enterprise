@@ -67,7 +67,7 @@ which sqlcmd
 which bcp
 sqlcmd -S localhost -U sa -P $sa_password -Q "CREATE DATABASE DRMONITORA"
 clear
-neofetch
+neofetch --title_fqdn on --memory_unit gib --memory_percent on --speed_shorthand on --cpu_temp C
 echo '
    Microsoft SQL Server 2022 instalado com sucesso.
 '
