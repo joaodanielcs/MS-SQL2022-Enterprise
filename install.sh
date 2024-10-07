@@ -54,3 +54,4 @@ which bcp
 sqlcmd -S localhost -U SA -P '$sa_password' -Q "CREATE DATABASE DRMONITORA"
 clear
 echo 'Microsoft SQL Server 2022 instalado com sucesso.'
+history -c
