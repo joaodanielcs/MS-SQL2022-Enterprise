@@ -1,4 +1,4 @@
-fetch#!/bin/bash
+#!/bin/bash
 
 read -sp 'Enter the SQL Server system administrator password: ' sa_password
 echo
