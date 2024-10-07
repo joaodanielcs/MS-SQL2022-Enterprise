@@ -46,12 +46,14 @@ echo "deb [signed-by=/usr/share/keyrings/microsoft.gpg arch=amd64,armhf,arm64] h
 sudo nala update
 sudo ACCEPT_EULA=Y nala install mssql-tools unixodbc-dev -y
 ls -ah /opt/mssql-tools/bin
-export PATH="$PATH:/opt/mssql-tools/bin"
 echo 'export PATH="$PATH:/opt/mssql-tools/bin"' >> /etc/environment
 source /etc/environment
+echo 'export PATH="$PATH:/opt/mssql-tools/bin"' >> ~/.bashrc
+source ~/.bashrc
+echo 'export PATH="$PATH:/opt/mssql-tools/bin"' >> ~/.profile
+source ~/.profile
 echo $PATH
 which sqlcmd
 which bcp
-sqlcmd -S localhost -U SA -P sa_password -Q "CREATE DATABASE DRMONITORA"
-clear
+sqlcmd -S localhost -U sa -P $sa_password -Q "CREATE DATABASE DRMONITORA"
 echo 'Microsoft SQL Server 2022 instalado com sucesso.'
