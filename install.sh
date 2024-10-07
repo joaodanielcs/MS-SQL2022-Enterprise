@@ -12,7 +12,7 @@ neofetch
 clear
 sed -i 's/# info "Local IP" local_ip/info underline\n    info "Local IP" local_ip/' .config/neofetch/config.conf
 sed -i 's/# info "Public IP" public_ip/info "Public IP" public_ip/' .config/neofetch/config.conf
-alias neofetch="neofetch --title_fqdn on --memory_unit gib --memory_percent on --speed_shorthand on --cpu_temp C"
+sudo echo 'alias neofetch="neofetch --title_fqdn on --memory_unit gib --memory_percent on --speed_shorthand on --cpu_temp C"' >> ~/.bashrc
 wget -q -O- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor | sudo tee /usr/share/keyrings/microsoft.gpg > /dev/null 2>&1
 echo "deb [signed-by=/usr/share/keyrings/microsoft.gpg arch=amd64,armhf,arm64] https://packages.microsoft.com/ubuntu/22.04/mssql-server-2022 jammy main" | sudo tee /etc/apt/sources.list.d/mssql-server-2022.list
 clear
