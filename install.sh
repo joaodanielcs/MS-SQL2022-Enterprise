@@ -4,7 +4,7 @@ read -sp 'Enter the SQL Server system administrator password: ' sa_password
 echo
 apt install nala sudo -y
 clear
-nala update -y
+nala update
 nala upgrade -y
 sudo nala install gnupg2 apt-transport-https wget curl ufw neofetch expect -y
 bash -c $'echo "clear\nneofetch\systemctl list-units --type service | egrep 'apache2|SQL|ssh'" >> /etc/profile.d/mymotd.sh && chmod +x /etc/profile.d/mymotd.sh'
