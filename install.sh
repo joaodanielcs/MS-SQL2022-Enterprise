@@ -2,6 +2,7 @@
 
 read -sp 'Enter the SQL Server system administrator password: ' sa_password
 echo
+sudo apt install nala sudo -y
 apt install nala sudo -y
 clear
 sudo nala update
