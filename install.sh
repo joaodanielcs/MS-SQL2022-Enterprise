@@ -4,8 +4,8 @@ read -sp 'Enter the SQL Server system administrator password: ' sa_password
 echo
 apt install nala sudo -y
 clear
-nala update
-nala upgrade -y
+sudo nala update
+sudo nala upgrade -y
 sudo nala install gnupg2 apt-transport-https wget curl ufw neofetch expect -y
 bash -c 'echo -e "clear\nneofetch --title_fqdn on --memory_unit gib --memory_percent on --speed_shorthand on --cpu_temp C\nsystemctl list-units --type service | egrep '\''apache2|SQL|ssh'\''" > /etc/profile.d/mymotd.sh && chmod +x /etc/profile.d/mymotd.sh'
 neofetch
@@ -52,14 +52,14 @@ echo "deb [signed-by=/usr/share/keyrings/microsoft.gpg arch=amd64,armhf,arm64] h
 sudo nala update
 sudo ACCEPT_EULA=Y nala install mssql-tools unixodbc-dev -y
 ls -ah /opt/mssql-tools/bin
-echo 'export PATH="$PATH:/opt/mssql-tools/bin"' >> /etc/environment
-echo 'alias neofetch="neofetch --title_fqdn on --memory_unit gib --memory_percent on --speed_shorthand on --cpu_temp C"' >> /etc/environment
+echo 'export PATH="$PATH:/usr/bin:/bin:/usr/bin/apt:/opt/mssql-tools/bin"' >> sudo /etc/environment
+echo 'alias neofetch="neofetch --title_fqdn on --memory_unit gib --memory_percent on --speed_shorthand on --cpu_temp C"' >> sudo /etc/environment
 source /etc/environment
-echo 'export PATH="$PATH:/opt/mssql-tools/bin"' >> ~/.profile
-echo 'alias neofetch="neofetch --title_fqdn on --memory_unit gib --memory_percent on --speed_shorthand on --cpu_temp C"' >> ~/.profile
+echo 'export PATH="$PATH:/usr/bin:/bin:/usr/bin/apt:/opt/mssql-tools/bin"' >> sudo ~/.profile
+echo 'alias neofetch="neofetch --title_fqdn on --memory_unit gib --memory_percent on --speed_shorthand on --cpu_temp C"' >> sudo ~/.profile
 source ~/.profile
-echo 'export PATH="$PATH:/opt/mssql-tools/bin"' >> ~/.bashrc
-echo 'alias neofetch="neofetch --title_fqdn on --memory_unit gib --memory_percent on --speed_shorthand on --cpu_temp C"' >> ~/.bashrc
+echo 'export PATH="$PATH:/usr/bin:/bin:/usr/bin/apt:/opt/mssql-tools/bin"' >> sudo ~/.bashrc
+echo 'alias neofetch="neofetch --title_fqdn on --memory_unit gib --memory_percent on --speed_shorthand on --cpu_temp C"' >> sudo ~/.bashrc
 source ~/.bashrc
 
 echo $PATH
