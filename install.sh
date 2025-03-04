@@ -53,14 +53,14 @@ echo "deb [signed-by=/usr/share/keyrings/microsoft.gpg arch=amd64,armhf,arm64] h
 sudo nala update
 sudo ACCEPT_EULA=Y nala install mssql-tools unixodbc-dev -y
 ls -ah /opt/mssql-tools/bin
-echo 'export PATH="$PATH:/usr/bin:/bin:/usr/bin/apt:/opt/mssql-tools/bin"' >> sudo /etc/environment
-echo 'alias neofetch="neofetch --title_fqdn on --memory_unit gib --memory_percent on --speed_shorthand on --cpu_temp C"' >> sudo /etc/environment
+sudo sh -c 'echo "export PATH=\"\$PATH:/usr/bin:/bin:/usr/bin/apt:/opt/mssql-tools/bin\"" >> /etc/environment'
+sudo sh -c 'echo "alias neofetch=\"neofetch --title_fqdn on --memory_unit gib --memory_percent on --speed_shorthand on --cpu_temp C\"" >> /etc/environment'
 source /etc/environment
-echo 'export PATH="$PATH:/usr/bin:/bin:/usr/bin/apt:/opt/mssql-tools/bin"' >> sudo ~/.profile
-echo 'alias neofetch="neofetch --title_fqdn on --memory_unit gib --memory_percent on --speed_shorthand on --cpu_temp C"' >> sudo ~/.profile
+sudo sh -c 'echo "export PATH=\"\$PATH:/usr/bin:/bin:/usr/bin/apt:/opt/mssql-tools/bin\"" >> ~/.profile'
+sudo sh -c 'echo "alias neofetch=\"neofetch --title_fqdn on --memory_unit gib --memory_percent on --speed_shorthand on --cpu_temp C\"" >> ~/.profile'
 source ~/.profile
-echo 'export PATH="$PATH:/usr/bin:/bin:/usr/bin/apt:/opt/mssql-tools/bin"' >> sudo ~/.bashrc
-echo 'alias neofetch="neofetch --title_fqdn on --memory_unit gib --memory_percent on --speed_shorthand on --cpu_temp C"' >> sudo ~/.bashrc
+sudo sh -c 'echo "export PATH=\"\$PATH:/usr/bin:/bin:/usr/bin/apt:/opt/mssql-tools/bin\"" >> ~/.bashrc'
+sudo sh -c 'echo "alias neofetch=\"neofetch --title_fqdn on --memory_unit gib --memory_percent on --speed_shorthand on --cpu_temp C\"" >> ~/.bashrc'
 source ~/.bashrc
 
 echo $PATH
