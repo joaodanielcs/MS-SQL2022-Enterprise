@@ -17,7 +17,7 @@ sudo echo 'alias neofetch="neofetch --title_fqdn on --memory_unit gib --memory_p
 wget -q -O- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor | sudo tee /usr/share/keyrings/microsoft.gpg > /dev/null 2>&1
 echo "deb [signed-by=/usr/share/keyrings/microsoft.gpg arch=amd64,armhf,arm64] https://packages.microsoft.com/ubuntu/22.04/mssql-server-2022 jammy main" | sudo tee /etc/apt/sources.list.d/mssql-server-2022.list
 clear
-timedatectl set-timezone America/Sao_Paulo
+timedatectl set-timezone Etc/UTC
 sudo nala update
 sudo nala install mssql-server -y
 cat << 'EOF' > setup_mssql.exp
